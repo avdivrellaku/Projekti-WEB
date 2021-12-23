@@ -167,9 +167,8 @@ ul li a:hover{
    
 
     .box {
-        height: 410px;
-        width: 350px;
-       
+        height: 370px;
+        width: 300px;
         display: flex;
         margin-top: 10px;
         flex-direction: column;
