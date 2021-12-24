@@ -165,7 +165,6 @@ ul li a:hover{
 
 
    
-
     .box {
         height: 370px;
         width: 300px;
@@ -208,7 +207,7 @@ ul li a:hover{
     .product-desc {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
        
     }
