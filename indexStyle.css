@@ -92,8 +92,8 @@ ul {
     font-size: 23px;
     
     font-family: "Courier New";
-    font-weight:600;
-
+    font-weight:400;
+    
 }
 
 ul li a {
@@ -123,25 +123,32 @@ ul li a:hover{
 .slides{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     height:600px;
+    
 
 
 }
 
 #slides-pics{
-    border:2px solid red;
-    background-position: center;
+    width: 60%;
+    background-position:inherit;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+    background-position-x:center;
+    background-position-y:center;
+    background-size:contain;
+    background-origin: border-box;
+    display: flex;
+    height: 90%;
+
+    
 
 }
 
 
 .slider-text{
-    width: 35%;
+    width: 40%;
     font-size: 60px;
     align-self:center;
     text-align: center;
@@ -158,14 +165,7 @@ ul li a:hover{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
 }
-.slides-pics {
-    display: flex;
-    width: 55%;
-    height: 90%;
 
-    margin: 10px 0px 10px 0px;
-    
-}
 #slider {
     width: 80%;
 
@@ -280,14 +280,15 @@ ul li a:hover{
 
     footer{
         width: 100%;
-        height: 360px;
+        height: 280px;
         background-color: #1e1e2c;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        font-family:monospace;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         flex-wrap: wrap;
+        
 
         
     }
@@ -295,21 +296,30 @@ ul li a:hover{
     .footer-box{
       
         width: 30%;
-        height: 80%;
+        height: 75%;
         color: white;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
+
       
       
-      
+    }
+    .footer-box h1{
+        font-size: 18px;
     }
 
     .footer-box h3{
         color: white;
         cursor: pointer;
+        font-size: 13px;
     }
+
+    .footer-box h2{
+        font-size: 15px;
+    }
+    
     .footer-box a{
         text-decoration:none;
     }
@@ -318,32 +328,33 @@ ul li a:hover{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        width: 100%;
+        width: 50%;
+        
        
     }
 
     .socials img{
-        height: 50px;
-        width: 50px;
+        height: 30px;
+        width: 30px;
     }
     .partners{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        width: 100%;
+        width: 50%; 
     }
 
     .partners img{
      
-        height: 50px;
-        width: 50px;
+        height: 30px;
+        width: 30px;
        
     }
 
     .copyright{
         width: 100%;
         height:50px;
-       font-size: 23px;
+       font-size: 18px;
        display: flex;
        align-items: center;
        justify-content: center;
@@ -601,7 +612,8 @@ ul li a:hover{
             justify-content: center;
             align-items: center;
             margin-bottom: 5%;
-    }
+            
+        }
     .login-cart {
         width:100%;
 
@@ -634,15 +646,27 @@ ul li a:hover{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
-                height: 40%;
+                align-items:center;
+               
+                width: 80%;
+                height: 200px;
+                
             }
-            .slides-pics {
+            
+            #slides-pics {
                 width: 60%;
-                height:200px;
+                height: 80%;
                 left:15%;
+         
+            
               
               
             }
+
+            .products .tekst{
+                margin-left: 27%;
+            }
+            
 
 
            
@@ -666,13 +690,29 @@ ul li a:hover{
                 font-size: 10px;
             }
             .footer-box{
+                display: flex;
                 justify-content: space-evenly;
+                align-items: center;
             }
 
 
             .socials img {
                 height: 40%;
                 width:70%;
+                align-self: center;
+            }
+            .socials{
+                
+                align-self: center;
+                display: flex;
+                margin-left: -22%;
+            }
+        
+            footer h2{
+                margin-left: -25%;
+            }
+            .partners{
+                margin-left: -20%;
             }
 
             .partners img {
