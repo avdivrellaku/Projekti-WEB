@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" type="text/css" href="indexStyle.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <div class="banner">
+        <div class="logo">
+
+            <a href="index.html"><img id="test" class="img" src="images/logo4.png"></a>
+
+        </div>
+        <div class="title" id="title">
+            Football Products Shop
+        </div>
+        <div class="login-cart">
+            <a href="form.html"><i id="user" class="far fa-user fa-2x"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart fa-2x"></i></a>
+            <a href="#"><i class="far fa-question-circle fa-2x"></i></a>
+
+
+        </div>
+    </div>
+    <hr>
+    <header>
+    </header>
+    <main>
+        <div id="formsignup" class="form-signup-div">
+
+            <form class="signupform" action="index.html">
+                <img id="logo-form" src="images/logo4.png">
+                <input type="text" id="name" placeholder="Name"> <br>
+                <label id="nameMsg" for="name"></label><br>
+                <input type="text" id="surname" placeholder="Surname"><br>
+                <label id="surnameMsg" for="surname"></label><br>
+                <input type="text" id="username" placeholder="Username"><br>
+                <label id="usernameMsg" for="username"></label><br>
+                <input type="email" id="email" placeholder="Email"><br>
+                <label id="emailMsg" for="email"></label><br>
+                <input type="password" id="password" placeholder="Password"><br>
+                <label id="passwordMsg" for="password"></label><br>
+
+                <div class="already-acc">
+                    <a href="#">
+                        <p id="gotologin">Already have an account?</p>
+                    </a>
+
+
+                    <input type="submit" id="register" value="Sign Up">
+                </div>
+            </form>
+        </div>
+
+        <div id="formlogin" class="form-login-div">
+
+            <form class="loginform" action="index.html">
+
+
+                <div id="login-items">
+                    <input type="text" id="usernamelogin" placeholder="Username"><br>
+                    <label id="usernameMs" for="usernamelogin"></label><br>
+
+                    <input type="password" id="passwordlogin" placeholder="Password"><br>
+                    <label id="passwordMs" for="passwordlogin"></label><br>
+
+                    <div class="no-acc">
+                        <input type="submit" id="login" value="Log In">
+                        <p>Or</p>
+                        <input type="button" id="gotosignup" value="Sign Up">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </main>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
