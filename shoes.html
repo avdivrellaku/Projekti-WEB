@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/indexStyle.css">
     <link rel="stylesheet" href="css/all.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
 <body>
     <div class="banner">
         <div class="logo">
-            <a href="index.html"><img id="test" class="img" src="images/logo4.png"></a>
+            <a href="index.php"><img id="test" class="img" src="images/logo4.png"></a>
 
         </div>
         <div class="title">

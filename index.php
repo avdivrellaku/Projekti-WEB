@@ -1,28 +1,54 @@
+<?php
+$hide = "";
+session_start();
+
+
+ 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="indexStyle.css">
     <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/indexStyle.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football Shop</title>
+	<title>Login or Sign Up</title>
+    <style>
+        .hide{
+            display:none;
+        }
+    </style>
 
 </head>
 
 <body>
+
+
+
+
     <div class="banner">
         <div class="logo">
 
-            <a href="index.html"><img id="test" class="img" src="images/logo4.png"></a>
+            <a href="index.php"><img id="test" class="img" src="images/logo4.png"></a>
 
         </div>
         <div class="title" id="title">
             Football Products Shop
         </div>
         <div class="login-cart">
-            <a href="form.html"><i title="Click Here to Log In or Sign Up" class="far fa-user fa-customize"></i></a>
+           <?php if(!isset($_SESSION['username'])){
+    echo "<a href='form.html'><i title='Click Here to Log In or Sign Up'  class='far fa-user fa-customize'></i></a>";
+        }
+        else{ 
+
+            echo "<a style='text-decoration:none;color:black;' href='profile.php'><p>".$_SESSION['username']."</p></a>"; 
+        }
+           
+        ?>
             <a href="#about"><i class="fas fa-info fa-customize" title="Click here to know more about us"></i></a>
             <a href="#contact"><i id="user" class="fas fa-envelope fa-customize"
                     title="Click here to contact us"></i></a>
@@ -53,7 +79,7 @@
                     and the highest quality products
                 </span></div>
             <div id="slides-pics" class="slides-pics">
-
+                
             </div>
 
         </div>

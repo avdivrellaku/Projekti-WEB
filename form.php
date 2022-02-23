@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" type="text/css" href="indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/indexStyle.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
             <a href="form.html"><i title="Click Here to Log In or Sign Up" class="far fa-user fa-customize"></i></a>
             <a href="index.html#about"><i class="fas fa-info fa-customize"
                     title="Click here to know more about us"></i></a>
-            <a href="#contact"><i id="user" class="fas fa-envelope fa-customize"
+            <a id="user" href="#contact"><i  class="fas fa-envelope fa-customize"
                     title="Click here to contact us"></i></a>
 
 
@@ -36,54 +36,42 @@
     <header>
     </header>
     <main>
-        <div id="formsignup" class="form-signup-div">
+      
 
-            <form class="signupform" action="index.html">
-                <img id="logo-form" src="images/logo4.png">
-                <input type="text" id="name" placeholder="Name"> <br>
-                <label id="nameMsg" for="name"></label><br>
-                <input type="text" id="surname" placeholder="Surname"><br>
-                <label id="surnameMsg" for="surname"></label><br>
-                <input type="text" id="username" placeholder="Username"><br>
-                <label id="usernameMsg" for="username"></label><br>
-                <input type="email" id="email" placeholder="Email"><br>
-                <label id="emailMsg" for="email"></label><br>
-                <input type="password" id="password" placeholder="Password"><br>
-                <label id="passwordMsg" for="password"></label><br>
+            <form id="formsignup" class="signupform" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+              
+                <input type="text" id="name" name="name" placeholder="Name"> 
+                <label id="nameMsg" for="name"></label>
+                <input type="text" id="surname" name="surname" placeholder="Surname">
+                <label id="surnameMsg" for="surname"></label>
+                <input type="text" id="username" name="username" placeholder="Username">
+                <label id="usernameMsg" for="username"></label>
+                <input type="email" id="email"  name="email" placeholder="Email">
+                <label id="emailMsg" for="email"></label>
+                <input type="password" id="password" name="password" placeholder="Password">
+                <label id="passwordMsg" for="password"></label>
 
                 <div class="already-acc">
-                    <a href="#">
+                    <a href="login.php">
                         <p id="gotologin">Already have an account?</p>
                     </a>
 
 
-                    <input type="submit" id="register" value="Sign Up">
+                    <input type="submit" id="register" name="registerButton" value="Sign Up">
                 </div>
             </form>
-        </div>
+       
+            <?php include_once 'registerController.php';?>
 
-        <div id="formlogin" class="form-login-div">
+           
 
-            <form class="loginform" action="index.html">
-
-
-                <div id="login-items">
-                    <input type="text" id="usernamelogin" placeholder="Username"><br>
-                    <label id="usernameMs" for="usernamelogin"></label><br>
-
-                    <input type="password" id="passwordlogin" placeholder="Password"><br>
-                    <label id="passwordMs" for="passwordlogin"></label><br>
-
-                    <div class="no-acc">
-                        <input type="submit" id="login" value="Log In">
-                        <p>Or</p>
-                        <input type="button" id="gotosignup" value="Sign Up">
-                    </div>
-                </div>
-            </form>
-        </div>
+            
+     
+    
+        
 
     </main>
+
     <footer>
 
 
@@ -137,7 +125,9 @@
     <div class="copyright">
         Copyright Ⓒ 2021. Football Products Shop. All rights Reserved
     </div>
-    <script src="javascript.js"></script>
+   
+    <script src="registerValidation.js">
+</script>
 </body>
 
 </html>
