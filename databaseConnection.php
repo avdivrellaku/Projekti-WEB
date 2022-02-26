@@ -30,8 +30,3 @@ catch (PDOException $e){
 
 
 }
-
-
-
-?>
-

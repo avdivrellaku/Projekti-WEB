@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if(isset($_SESSION['loginUsername'])){
+if(isset($_SESSION['username']) && isset($_SESSION['password'])){
     header("location:index.php");
 }
 
@@ -13,7 +13,7 @@ else{
 
 <head>
     <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" type="text/css" href="css/indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="indexStyle.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@ else{
             Football Products Shop
         </div>
         <div class="login-cart">
-            <a href="form.html"><i title="Click Here to Log In or Sign Up" class="far fa-user fa-customize"></i></a>
+            <a href="form.php"><i title="Click Here to Log In or Sign Up" class="far fa-user fa-customize"></i></a>
             <a href="index.html#about"><i class="fas fa-info fa-customize"
                     title="Click here to know more about us"></i></a>
             <a id="user" href="#contact"><i  class="fas fa-envelope fa-customize"
@@ -78,10 +78,10 @@ include_once 'loginValidation.php';
 
 <div class="footer-box">
 <h1>Account</h1>
-<a href="form.html">
+<a href="login.php">
 <h3>Login</h3>
 </a>
-<a href="form.html">
+<a href="form.php">
 <h3>Register</h3>
 </a>
 <h3>Forgot Password?</h3>

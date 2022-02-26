@@ -4,9 +4,10 @@ session_start();
 include_once 'productRepository.php';
 $productRepository = new ProductRepository();
 
-$jerseys = $productRepository->getProductsByType('jerseys');
+$shoes = $productRepository->getProductsByType('shoes');
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +18,7 @@ $jerseys = $productRepository->getProductsByType('jerseys');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerseys</title>
+    <title>Shoes</title>
 
 </head>
 
@@ -25,7 +26,6 @@ $jerseys = $productRepository->getProductsByType('jerseys');
     <div class="banner">
         <div class="logo">
             <a href="index.php"><img id="test" class="img" src="images/logo4.png"></a>
-
 
         </div>
         <div class="title">
@@ -56,27 +56,26 @@ $jerseys = $productRepository->getProductsByType('jerseys');
 
         <ul class="navigation">
             <li><a href="index.php">Home</a></li>
-            <li><a href="jerseys.php" id="active">Jerseys</a></li>
-            <li><a href="shoes.php">Shoes</a></li>
+            <li><a href="jerseys.php">Jerseys</a></li>
+            <li><a href="shoes.php" id="active">Shoes</a></li>
             <li><a href="tshirts.php">T-Shirts</a></li>
             <li><a href="other.php">Other</a></li>
 
 
         </ul>
     </header>
-
     <main>
     <div class="products">
             <div class="boxes">
                 <?php
-            foreach($jerseys as $jersey){
+            foreach($shoes as $shoe){
                         echo "
                 <div class='box' style='width:340px; padding-top:10px;'>
-                    <img src='images/$jersey[imageName]'>
+                    <img src='images/$shoe[imageName]'>
                     <div class='product-desc'>
                         <div class='emri-cmimi'>
-                            <p class='name'>$jersey[productName]</p>
-                            <p class='price'>$$jersey[price]</p>
+                            <p class='name'>$shoe[productName]</p>
+                            <p class='price'>$$shoe[price]</p>
 
                         </div>
                         <a href='#'><input class='buy-button' type='button' value='Buy Now'></a>
@@ -90,13 +89,12 @@ $jerseys = $productRepository->getProductsByType('jerseys');
                       
                    </div>
                 </div>
-       
     </main>
-
     <footer>
+
         <div class="footer-box">
             <h1>Account</h1>
-            <a href="login.php">
+            <a href="form.php">
                 <h3>Login</h3>
             </a>
             <a href="form.php">
@@ -131,7 +129,13 @@ $jerseys = $productRepository->getProductsByType('jerseys');
                 <a href="https://adidas.com"><img src="images/adidas-logo.png"></a>
                 <a href="https://us.puma.com"><img src="images/puma-logo.png"></a>
             </div>
+
+
+
+
+
     </footer>
+
     <div class="copyright">
         Copyright Ⓒ 2021. Football Products Shop. All rights Reserved
     </div>

@@ -1,8 +1,18 @@
+
+<?php
+$hide = "";
+session_start();
+include_once 'productRepository.php';
+$productRepository = new ProductRepository();
+
+$tshirts = $productRepository->getProductsByType('tshirt');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="indexStyle.css">
     <link rel="stylesheet" href="css/all.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,12 +30,22 @@
         <div class="title">
             Football Products Shop
         </div>
-        <div class="login-cart">
-            <a href="form.html"><i title="Click Here to Log In or Sign Up" class="far fa-user fa-customize"></i></a>
-            <a href="index.html#about"><i class="fas fa-info fa-customize"
-                    title="Click here to know more about us"></i></a>
+        <div style="width:20%;" class="login-cart">
+            <div style="display:flex;justify-content:flex-end;width:25%;margin-left:15%"class="user-session">
+           <?php if(!isset($_SESSION['username'])){
+    echo "<a href='form.php'><i title='Click Here to Log In or Sign Up'  class='far fa-user fa-customize'></i></a>";
+        }
+        else{ 
+
+            echo "<a style='text-decoration:none;color:black;' href='profile.php'><p>".$_SESSION['username']."</p></a>"; 
+        }
+           
+        ?>
+        </div>
+            <a href="#about"><i class="fas fa-info fa-customize" title="Click here to know more about us"></i></a>
             <a href="#contact"><i id="user" class="fas fa-envelope fa-customize"
                     title="Click here to contact us"></i></a>
+
 
 
         </div>
@@ -36,140 +56,50 @@
 
 
         <ul class="navigation">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jerseys.html">Jerseys</a></li>
-            <li><a href="shoes.html">Shoes</a></li>
-            <li><a href="tshirts.html" id="active">T-Shirts</a></li>
-            <li><a href="other.html">Other</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="jerseys.php">Jerseys</a></li>
+            <li><a href="shoes.php">Shoes</a></li>
+            <li><a href="tshirts.php" id="active">T-Shirts</a></li>
+            <li><a href="other.php">Other</a></li>
 
 
         </ul>
     </header>
     <main>
-        <div class="products">
-
+    <div class="products">
             <div class="boxes">
+                <?php
+            foreach($tshirts as $tshirt){
+                        echo "
+                <div class='box' style='width:340px; padding-top:10px;'>
+                    <img src='images/$tshirt[imageName]'>
+                    <div class='product-desc'>
+                        <div class='emri-cmimi'>
+                            <p class='name'>$tshirt[productName]</p>
+                            <p class='price'>$$tshirt[price]</p>
 
-                <div class="box">
-                    <img src="images/blacktee.png">
-
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Nike Black T-Shirt</p>
-                            <p class="price">$13.99</p>
-
-                        </div><a href="shop.html"><input class="buy-button" type="button" value="Buy Now"></a>
+                        </div>
+                        <a href='#'><input class='buy-button' type='button' value='Buy Now'></a>
                     </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/adidas-tshirt.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Adidas Manchester United White T-Shirt</p>
-                            <p class="price">$19.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
                     </div>
-
+                    ";
+                }
+                ?> 
+            
+                     
+                      
+                   </div>
                 </div>
-
-                <div class="box">
-                    <img src="images/puma-neymar.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Puma Neymar T-Shirt</p>
-                            <p class="price">$35.99</p>
-
-                        </div> <a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="boxes">
-
-                <div class="box">
-                    <img src="images/cr7.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Nike CR7 T-Shirt</p>
-                            <p class="price">$32.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/tshirt.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Puma White T-Shirt</p>
-                            <p class="price">$14.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/pinktee.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Adidas Pink T-Shirt</p>
-                            <p class="price">$17.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="boxes">
-
-                <div class="box">
-                    <img src="images/messi-tshirt.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Adidas Messi T-Shirt</p>
-                            <p class="price">$34.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/puma-blue.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Puma Blue T-Shirt</p>
-                            <p class="price">$13.49</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/adidas-black.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Adidas Black T-Shirt</p>
-                            <p class="price">$19.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-        </div>
+    </main>
     </main>
 
     <footer>
         <div class="footer-box">
             <h1>Account</h1>
-            <a href="form.html">
+            <a href="form.php">
                 <h3>Login</h3>
             </a>
-            <a href="form.html">
+            <a href="form.php">
                 <h3>Register</h3>
             </a>
             <h3>Forgot Password?</h3>

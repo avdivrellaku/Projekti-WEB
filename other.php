@@ -1,8 +1,18 @@
+<?php
+$hide = "";
+session_start();
+include_once 'productRepository.php';
+$productRepository = new ProductRepository();
+
+$others = $productRepository->getProductsByType('other');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="indexStyle.css">
     <link rel="stylesheet" href="css/all.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,12 +30,23 @@
         <div class="title">
             Football Products Shop
         </div>
-        <div class="login-cart">
-            <a href="form.html"><i title="Click Here to Log In or Sign Up" class="far fa-user fa-customize"></i></a>
-            <a href="index.html#about"><i class="fas fa-info fa-customize"
-                    title="Click here to know more about us"></i></a>
+        <div style="width:20%;" class="login-cart">
+            <div style="display:flex;justify-content:flex-end;width:25%;margin-left:15%"class="user-session">
+           <?php if(!isset($_SESSION['username'])){
+    echo "<a href='form.php'><i title='Click Here to Log In or Sign Up'  class='far fa-user fa-customize'></i></a>";
+        }
+        else{ 
+
+            echo "<a style='text-decoration:none;color:black;' href='profile.php'><p>".$_SESSION['username']."</p></a>"; 
+        }
+           
+        ?>
+        </div>
+            <a href="#about"><i class="fas fa-info fa-customize" title="Click here to know more about us"></i></a>
             <a href="#contact"><i id="user" class="fas fa-envelope fa-customize"
                     title="Click here to contact us"></i></a>
+
+
 
         </div>
     </div>
@@ -33,140 +54,50 @@
     <header>
 
         <ul class="navigation">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jerseys.html">Jerseys</a></li>
-            <li><a href="shoes.html">Shoes</a></li>
-            <li><a href="tshirts.html">T-Shirts</a></li>
-            <li><a href="other.html" id="active">Other</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="jerseys.php">Jerseys</a></li>
+            <li><a href="shoes.php">Shoes</a></li>
+            <li><a href="tshirts.php">T-Shirts</a></li>
+            <li><a href="other.php" id="active">Other</a></li>
 
 
         </ul>
     </header>
     <main>
-        <div class="products">
-
+    <div class="products">
             <div class="boxes">
+                <?php
+            foreach($others as $other){
+                        echo "
+                <div class='box' style='width:340px; padding-top:10px;'>
+                    <img src='images/$other[imageName]'>
+                    <div class='product-desc'>
+                        <div class='emri-cmimi'>
+                            <p class='name'>$other[productName]</p>
+                            <p class='price'>$$other[price]</p>
 
-                <div class="box">
-                    <img src="images/socks.png">
-
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Nike Grip Socks</p>
-                            <p class="price">$9.99</p>
-
-                        </div><a href="shop.html"><input class="buy-button" type="button" value="Buy Now"></a>
+                        </div>
+                        <a href='#'><input class='buy-button' type='button' value='Buy Now'></a>
                     </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/pl.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Premier League Ball Winter Edition</p>
-                            <p class="price">$34.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
                     </div>
-
+                    ";
+                }
+                ?> 
+            
+                     
+                      
+                   </div>
                 </div>
-
-                <div class="box">
-                    <img src="images/puma-pads.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Puma Ultra Shin Guards</p>
-                            <p class="price">$17.95</p>
-
-                        </div> <a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="boxes">
-
-                <div class="box">
-                    <img src="images/puma-shorts.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Puma Blue Shorts NJ Edition</p>
-                            <p class="price">$29.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/messi-pads.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Adidas Messi Shin Guards</p>
-                            <p class="price">$20.95</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/nike-gloves.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Nike Phantom Elite Goalkeeper Gloves</p>
-                            <p class="price">$74.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="boxes">
-
-                <div class="box">
-                    <img src="images/sock-tape.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Football Socks Tape</p>
-                            <p class="price">$4.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/puma-socks.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Puma Black Training Socks</p>
-                            <p class="price">$7.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/adidas-socks.png">
-                    <div class="product-desc">
-                        <div class="emri-cmimi">
-                            <p class="name">Adidas Adizero Training Cushioned Socks</p>
-                            <p class="price">$13.99</p>
-
-                        </div><a href="#"><input class="buy-button" type="button" value="Buy Now"></a>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-        </div>
+    </main>
     </main>
     <footer>
 
         <div class="footer-box">
             <h1>Account</h1>
-            <a href="form.html">
+            <a href="login.php">
                 <h3>Login</h3>
             </a>
-            <a href="form.html">
+            <a href="form.php">
                 <h3>Register</h3>
             </a>
             <h3>Forgot Password?</h3>

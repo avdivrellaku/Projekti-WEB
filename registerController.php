@@ -28,6 +28,8 @@ if(isset($_POST['registerButton'])){
 
 
             $userRepository->insertUser($user);
+
+            
         
 
     }
