@@ -1,11 +1,8 @@
 <?php 
 session_start();
 
-if(isset($_SESSION['username']) && isset($_SESSION['password'])){
-    header("location:index.php");
-}
 
-else{
+
 ?>
 
 <!DOCTYPE html>
@@ -32,12 +29,13 @@ else{
         <div class="title" id="title">
             Football Products Shop
         </div>
-        <div class="login-cart">
-            <a href="form.php"><i title="Click Here to Log In or Sign Up" class="far fa-user fa-customize"></i></a>
-            <a href="index.html#about"><i class="fas fa-info fa-customize"
-                    title="Click here to know more about us"></i></a>
-            <a id="user" href="#contact"><i  class="fas fa-envelope fa-customize"
-                    title="Click here to contact us"></i></a>
+        <div style="width:20%;" class="login-cart">
+            <div style="display:flex;justify-content:flex-end;width:25%;margin-left:15%" class="user-session">
+                   <a href='form.php'><i title='Click Here to Log In or Sign Up'  class='far fa-user fa-customize'></i></a>
+            </div>
+            <a href="index.php#about"><i class="fas fa-info fa-customize" title="Click here to know more about us"></i></a>
+            <a href="#contact"><i id="user" class="fas fa-envelope fa-customize" title="Click here to contact us"></i></a>
+
 
 
         </div>
@@ -72,12 +70,9 @@ else{
             </form>
        
             <?php include_once 'registerController.php';
-                include_once 'loginValidation.php';
             ?>
 
-            <?php
-            }   
-            ?>
+         
 
     </main>
 
@@ -121,7 +116,7 @@ else{
                 <a href="https://adidas.com"><img src="images/adidas-logo.png"></a>
                 <a href="https://us.puma.com"><img src="images/puma-logo.png"></a>
             </div>
-
+        </div>
 
 
 

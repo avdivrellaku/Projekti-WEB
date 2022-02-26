@@ -11,7 +11,7 @@ if(isset($_POST['registerButton'])){
         
     }
    
-    else{
+    else{   
         $name = $_POST['name'];
         $surname = $_POST['surname'];
         $email = $_POST['email'];

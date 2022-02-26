@@ -183,18 +183,10 @@ ul li a:hover{
     width: 80%;
 
 }
-.products
-    {
-        margin-top: 10px;
-        display: flex;
-        flex-direction:column;
-        justify-content: space-between;
-        height: auto;
-        flex-wrap: wrap;
-    }
-    .products .tekst {
+
+    .tekst {
         font-size: 25px;
-        margin: 10px 0px 20px 74px;
+        margin: 30px 0px 20px 74px;
         font-weight: bold;
         font-family:"Arial";
         text-decoration: underline;
@@ -225,11 +217,16 @@ ul li a:hover{
         height: 370px;
         width: 310px;
         display: flex;
-        margin-top: 10px;
+        margin-top: 30px;
         flex-direction: column;
         justify-content: space-between;
         padding-right:40px;
+        padding-left: 10px;
+        padding: 20px 40px 20px 10px;
+        align-items: center;
 		transition: .4s ease;
+        
+       
         
     }
     .box img {
@@ -237,18 +234,34 @@ ul li a:hover{
         height: 73%;
         cursor: pointer;    
         object-fit:contain;
+        align-self: center;
+        box-shadow: 1px 1px 3px 3px #6399bb;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 30px #7ebadf;
+        position: relative;
+        
 
     }
 
     .box img:hover {
         width: 100%;
         height: 75%;
-        cursor: pointer;  
-        filter:opacity(85%);  
+        cursor: pointer; 
 		transition: .4s ease;
 
     }
     
+
+    .testdiv{
+        height: 280px;
+        width: 300px;
+        border: 3px solid red;
+        position:absolute;
+       filter: opacity(0);
+        
+       
+    }
 
     .emri-cmimi {
         display: flex;
@@ -256,10 +269,12 @@ ul li a:hover{
         align-items: flex-start;
         width: 70%;
         
+        
        
 
 
     }
+  
 
     .name{
         font-size: 18px;
@@ -279,6 +294,8 @@ ul li a:hover{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        align-self: center;
         
 
        
@@ -294,12 +311,14 @@ ul li a:hover{
         outline: none;
         cursor: pointer;
 		transition: .4s ease;
+       
     }
     .buy-button:hover{
         color:black;
         background-color: transparent;
 		border: 2px solid #2d2d44;
 		transition: .4s ease;
+        box-shadow: 1px 1px 5px 5px #6399bb;
     }
 
     #about{
@@ -332,7 +351,7 @@ ul li a:hover{
     }
 
 
-    .about-description .tekst
+    .about-description .tekst-about
     {
        
         height: 100%;
@@ -348,7 +367,6 @@ ul li a:hover{
     {
         height: 90%;
         width: 40%;
-       
         background-image: url(images/aboutphoto.png);
         background-position: center;
         background-repeat: no-repeat;
@@ -421,17 +439,20 @@ ul li a:hover{
         resize: none;
     }
     .footer-box h1{
-        font-size: 18px;
+        font-size: 90%;
+        
     }
 
     .footer-box h3{
         color: white;
         cursor: pointer;
-        font-size: 13px;
+        font-size:70%;
+        
     }
 
     .footer-box h2{
-        font-size: 15px;
+        font-size: 80%;
+        
     }
     
     .footer-box a{
@@ -478,7 +499,7 @@ ul li a:hover{
 
     .signupform {
        
-        border: 10px double #2d2d44;
+        border: 5px solid #2d2d44;
         border-radius: 5px;
         height: 430px;
         width:400px;
@@ -497,7 +518,7 @@ ul li a:hover{
     }
   
     .loginform {
-        border: 10px double #2d2d44;
+        border: 5px solid #2d2d44;
         border-radius: 5px;
         height: 300px;
         width:400px;
@@ -831,9 +852,15 @@ ul li a:hover{
                 display: flex;
                 margin-left: -22%;
             }
-        
+            
+
+            footer h1 .socialmedia{
+                margin-left: -20%;
+                font-size: 5px;
+            }
             footer h2{
                 margin-left: -25%;
+                font-size:5px;
             }
             .partners{
                 margin-left: -20%;

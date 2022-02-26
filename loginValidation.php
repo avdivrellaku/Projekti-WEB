@@ -31,8 +31,8 @@
                }else{
                    
                    if($i == sizeof($users)){
-                    echo "<h5 style='margin-left:40%;color:red;'>!Incorrect Username or Password (Try Again)</h5>";
-                    exit();
+                    echo "<h5 style='margin-left:40%;color:red;'>!Incorrect Username or Password/User Does Not Exist</h5>";
+                   
                    }
                    
                }

@@ -1,5 +1,5 @@
 <?php
-$hide = "";
+
 session_start();
 
 
@@ -15,6 +15,8 @@ $productsNew = $productRepository->getProductsByCategory('newest');
 $productsSold = $productRepository->getProductsByCategory('sold');
 
 $productsRecommend = $productRepository->getProductsByCategory('recommended');
+
+
 
 
 ?>
@@ -101,7 +103,7 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
         <hr>
 
 
-        <div class="products">
+       
             <div class="tekst">
                 Newest Products
             </div>
@@ -127,8 +129,8 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
 
 
             </div>
-        </div>
-        <div class="products">
+       
+      
             <div class="tekst">
                Most Sold Products
             </div>
@@ -137,7 +139,7 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
                 foreach ($productsSold as $productSold) {
                     echo "
                 <div class='box'>
-                    <img src='images/$productSold[imageName]'>
+                    <img src='images/$productSold[imageName]' >
                     <div class='product-desc'>
                         <div class='emri-cmimi'>
                             <p class='name'>$productSold[productName]</p>
@@ -146,6 +148,8 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
                         </div>
                         <a href='#'><input class='buy-button' type='button' value='Buy Now'></a>
                     </div>
+
+                    
                     </div>
                     ";
                 }
@@ -154,8 +158,8 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
 
 
             </div>
-        </div>
-        <div class="products">
+        
+        
             <div class="tekst">
                 Recommended Products
             </div>
@@ -181,15 +185,14 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
 
 
             </div>
-        </div>
-
+       
         <hr>
         <div id="about">
             <div class="title">
                 About Us
             </div>
             <div class="about-description">
-                <div class="tekst">
+                <div class="tekst-about">
                     <div class="tekst-paragraph">
                         <h3>Who are we?</h3>
                         <p>We are an online store established in 2019 that sells all kinds of
@@ -268,6 +271,7 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
                 <a href="https://adidas.com"><img src="images/adidas-logo.png"></a>
                 <a href="https://us.puma.com"><img src="images/puma-logo.png"></a>
             </div>
+        </div>
     </footer>
 
     <div class="copyright">

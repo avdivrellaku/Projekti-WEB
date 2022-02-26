@@ -1,5 +1,5 @@
 <?php
-$hide = "";
+
 session_start();
 include_once 'productRepository.php';
 $productRepository = new ProductRepository();
@@ -42,7 +42,7 @@ $others = $productRepository->getProductsByType('other');
            
         ?>
         </div>
-            <a href="#about"><i class="fas fa-info fa-customize" title="Click here to know more about us"></i></a>
+            <a href="index.php#about"><i class="fas fa-info fa-customize" title="Click here to know more about us"></i></a>
             <a href="#contact"><i id="user" class="fas fa-envelope fa-customize"
                     title="Click here to contact us"></i></a>
 
@@ -64,7 +64,7 @@ $others = $productRepository->getProductsByType('other');
         </ul>
     </header>
     <main>
-    <div class="products">
+    
             <div class="boxes">
                 <?php
             foreach($others as $other){
@@ -87,7 +87,7 @@ $others = $productRepository->getProductsByType('other');
                      
                       
                    </div>
-                </div>
+               
     </main>
     </main>
     <footer>
@@ -129,6 +129,7 @@ $others = $productRepository->getProductsByType('other');
                 <a href="https://adidas.com"><img src="images/adidas-logo.png"></a>
                 <a href="https://us.puma.com"><img src="images/puma-logo.png"></a>
             </div>
+        </div>
 
 
 

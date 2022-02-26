@@ -5,7 +5,7 @@ if(isset($_SESSION['username']) && isset($_SESSION['password'])){
     header("location:index.php");
 }
 
-else{
+else{   
 ?>
 
 <!DOCTYPE html>
@@ -33,12 +33,13 @@ else{
         <div class="title" id="title">
             Football Products Shop
         </div>
-        <div class="login-cart">
-            <a href="form.php"><i title="Click Here to Log In or Sign Up" class="far fa-user fa-customize"></i></a>
-            <a href="index.html#about"><i class="fas fa-info fa-customize"
-                    title="Click here to know more about us"></i></a>
-            <a id="user" href="#contact"><i  class="fas fa-envelope fa-customize"
-                    title="Click here to contact us"></i></a>
+        <div style="width:20%;" class="login-cart">
+            <div style="display:flex;justify-content:flex-end;width:25%;margin-left:15%" class="user-session">
+                   <a href='form.php'><i title='Click Here to Log In or Sign Up'  class='far fa-user fa-customize'></i></a>
+            </div>
+            <a href="index.php#about"><i class="fas fa-info fa-customize" title="Click here to know more about us"></i></a>
+            <a href="#contact"><i id="user" class="fas fa-envelope fa-customize" title="Click here to contact us"></i></a>
+
 
 
         </div>
@@ -100,20 +101,20 @@ include_once 'loginValidation.php';
 
 
 <div class="footer-box">
-<h1>Follow us on Social Media</h1>
-<div class="socials">
-<a href="https://facebook.com"><img src="images/facebook.png"></a>
-<a href="https://instagram.com"><img src="images/instagram.png"></a>
-<a href="https://twitter.com"><img src="images/twitter.png"></a>
+            <h1>Follow us on Social Media</h1>
+            <div class="socials">
+                <a href="https://facebook.com"><img src="images/facebook.png"></a>
+                <a href="https://instagram.com"><img src="images/instagram.png"></a>
+                <a href="https://twitter.com"><img src="images/twitter.png"></a>
 
-</div>
-<h2>Our Partners</h2>
-<div class="partners">
-<a href="https://nike.com"><img src="images/nikelogo.png"></a>
-<a href="https://adidas.com"><img src="images/adidas-logo.png"></a>
-<a href="https://us.puma.com"><img src="images/puma-logo.png"></a>
-</div>
-
+            </div>
+            <h2>Our Partners</h2>
+            <div class="partners">
+                <a href="https://nike.com"><img src="images/nikelogo.png"></a>
+                <a href="https://adidas.com"><img src="images/adidas-logo.png"></a>
+                <a href="https://us.puma.com"><img src="images/puma-logo.png"></a>
+            </div>
+        </div>
 
 
 

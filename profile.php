@@ -80,7 +80,7 @@ if (!isset($_SESSION['username'])) {
 
                 ?>
             </div>
-            <a href="#about"><i class="fas fa-info fa-customize" title="Click here to know more about us"></i></a>
+            <a href="index.php#about"><i class="fas fa-info fa-customize" title="Click here to know more about us"></i></a>
             <a href="#contact"><i id="user" class="fas fa-envelope fa-customize" title="Click here to contact us"></i></a>
 
 
@@ -125,19 +125,20 @@ if (!isset($_SESSION['username'])) {
 
 
 <div class="footer-box">
-    <h1>Follow us on Social Media</h1>
-    <div class="socials">
-        <a href="https://facebook.com"><img src="images/facebook.png"></a>
-        <a href="https://instagram.com"><img src="images/instagram.png"></a>
-        <a href="https://twitter.com"><img src="images/twitter.png"></a>
+            <h1>Follow us on Social Media</h1>
+            <div class="socials">
+                <a href="https://facebook.com"><img src="images/facebook.png"></a>
+                <a href="https://instagram.com"><img src="images/instagram.png"></a>
+                <a href="https://twitter.com"><img src="images/twitter.png"></a>
 
-    </div>
-    <h2>Our Partners</h2>
-    <div class="partners">
-        <a href="https://nike.com"><img src="images/nikelogo.png"></a>
-        <a href="https://adidas.com"><img src="images/adidas-logo.png"></a>
-        <a href="https://us.puma.com"><img src="images/puma-logo.png"></a>
-    </div>
+            </div>
+            <h2>Our Partners</h2>
+            <div class="partners">
+                <a href="https://nike.com"><img src="images/nikelogo.png"></a>
+                <a href="https://adidas.com"><img src="images/adidas-logo.png"></a>
+                <a href="https://us.puma.com"><img src="images/puma-logo.png"></a>
+            </div>
+        </div>
 </footer>
 
 <div class="copyright">
