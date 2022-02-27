@@ -135,7 +135,7 @@ $tshirts = $productRepository->getProductsByType('tshirt');
     </footer>
     <div class="copyright">
 
-        Copyright Ⓒ 2021. Football Products Shop. All rights Reserved
+        Copyright Ⓒ 2022. Football Products Shop. All rights Reserved
     </div>
 
 </body>

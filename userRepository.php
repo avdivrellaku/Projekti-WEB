@@ -38,7 +38,7 @@ class UserRepository
         $statement->execute([$id, $name, $surname, $email, $username, $password, $role]);
 
 
-        echo "<script>alert('User insert was successful')</script>";
+        echo "<script>alert('User inserted succesfully')</script>";
     }
 
 
