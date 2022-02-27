@@ -29,7 +29,7 @@ if (!isset($_SESSION['username'])) {
             }
             .profile-items{
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-evenly;
                 width: 40%;
                 align-items: center;
                 
