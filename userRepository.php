@@ -70,6 +70,46 @@ class UserRepository
         return $user;
     }
 
+
+    function testEmail($user){
+        $conn = $this->connection;
+
+        $email = $user->getEmail();
+
+        $sql = "SELECT * from users WHERE email = '$email'";
+
+        $statement = $conn->query($sql);
+        $testEmail = $statement->fetchAll();
+
+        if(count($testEmail) == 0){
+            return false;
+        }
+        else{
+        return true;
+        }
+
+
+    }
+    function testUsername($user){
+        $conn = $this->connection;
+
+        $username = $user->getusername();
+
+        $sql = "SELECT * from users WHERE username = '$username'";
+
+        $statement = $conn->query($sql);
+        $testUsername = $statement->fetchAll();
+
+        if(count($testUsername) == 0){
+            return false;
+        }
+        else{
+        return true;
+        }
+
+
+    }
+
     function updateUser($id, $name, $surname, $email, $username, $password, $role)
     {
 

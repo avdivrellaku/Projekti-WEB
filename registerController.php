@@ -29,8 +29,17 @@ if(isset($_POST['registerButton'])){
             $userRepository = new UserRepository();
 
 
-            $userRepository->insertUser($user);
+            if($userRepository->testEmail($user)){
+               echo "<h5 style='color:red;font-family:calibri;font-weight:600;margin-left:40%;'>User already exists(email not available)!</h5>";
+            }
 
+            else if($userRepository->testUsername($user)){
+                echo "<h5 style='color:red;font-family:calibri;font-weight:600;margin-left:40%;'>User already exists(username not available)!</h5>";
+            }
+            else {
+
+            $userRepository->insertUser($user);
+            }
             
         
 
