@@ -14,7 +14,47 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login or Sign Up</title>
+	<title>Sign Up</title>
+
+    <style>
+
+@media screen and (max-width:800px){
+    .banner{
+        height: 80px;
+        padding-top: 10px;
+        width: 50%;
+        margin-left:21%;
+        padding-bottom: 10px;
+       
+    }
+    .login-cart{
+        margin-top:20px;
+        
+    }
+
+    main{
+        height: 300px;
+        margin-bottom:50%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+
+    #formsignup{
+        width: 400px;
+       display: flex;
+       flex-direction: column;
+       margin-left: -8%;
+       
+       
+    }
+
+    .footer{
+        position: relative;
+    }
+}
+
+</style>
 
 </head>
 

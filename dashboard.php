@@ -62,6 +62,8 @@ if (!isset($_SESSION['username'])) {
            background-color: transparent;
            transition: .5s ease;
        }
+
+       
         </style>
 
         <link rel="stylesheet" type="text/css" href="indexStyle.css">
@@ -86,7 +88,72 @@ if (!isset($_SESSION['username'])) {
         <div class="tables" style="min-height:600px;
         padding-top:30px;display:flex;flex-direction:row;justify-content:space-around;flex-wrap:wrap;">
      
-    
+     <table >
+                <caption>PRODUCTS TABLE</caption>
+                <th>ID</th>
+                <th>ProductName</th>
+                <th>Type</th>
+                <th>Image Name</th>
+                <th>Price($)</th>
+                <th>Index Category</th>
+                <th colspan="2">UPDATE or DELETE</th>
+                <?php
+
+    include_once 'productRepository.php';
+
+    $productRepository = new ProductRepository();
+
+    $products = $productRepository->getAllProducts();
+
+                foreach ($products as $product) {
+                    echo
+                    "
+    <tr>
+         <td>$product[id]</td>
+         <td>$product[productName]</td>
+         <td>$product[type] </td>
+         <td>$product[imageName] </td>
+         <td>$product[price] </td>
+         <td>$product[indexCategory] </td>
+         <td><a href='editProducts.php?id=$product[id]'>Edit</a> </td>
+         <td><a href='deleteProducts.php?id=$product[id]'>Delete</a></td>
+         
+    </tr>
+    ";
+                }
+
+
+
+                ?>
+
+            </table>
+           
+           
+        
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                            <h4 style="font-family:'Calibri';">Add a New Product</h4>
+              
+              <input style="width:40%" type="text" id="productName" name="productName" placeholder="Product Name"> 
+              <label id="nameMsg" ></label>
+              <input style="width:40%" type="text" id="type" name="type" placeholder="Type">
+              <label id="typeMsg" ></label>
+              <input style="width:40%" type="text" id="imgname" name="imageName" placeholder="Image Name">
+              <label id="imgMsg" ></label>
+              <input style="width:40%" type="text" id="indexCategory" name="indexCategory" placeholder="Index Category">
+              <label id="indexMsg" ></label>
+              <input style="width:40%" type="text"  id="price" name="price" placeholder="Price($)">
+              <label id="priceMsg" ></label>
+             
+
+              
+                  <input style="align-self:center"type="submit" id="register" name="insertButton" value="Insert">
+                  <?php include_once 'productController.php'?>
+          </form>
+         
+            </div>
+
+            
+            <hr>
             <table style="max-height:10px; margin-left:2.60%;margin-bottom:3%" >
                 <caption>USERS TABLE</caption>
 
@@ -134,9 +201,51 @@ if (!isset($_SESSION['username'])) {
                 }
                 ?>
             </table>
+            <hr>
+            <table style="max-height:10px; margin-left:2.60%;margin-bottom:3%" >
+                <caption>ACTIVITES TABLE</caption>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>USER</th>
+                    <th>ACTIVITY</th>
+                    <th>CHANGED ITEM</th>
+                    <th>TIME</th>
+                   
+
+
+
+                </tr>
+
+                <?php
+                include_once 'auditLogRepository.php';
+             
+                $auditLogRepository = new AuditLogRepository();
+
+                $activities = $auditLogRepository->getActivites();  
+
+                foreach ($activities as $activity) {
+                    echo
+                    "
+    <tr>
+         <td>$activity[id]</td>
+         <td>$activity[user]</td>
+         <td>$activity[activityType] </td>
+         <td>$activity[changedItem] </td>
+         <td>$activity[time]</td>
+    
+    </tr>
+   
+    ";
+                }
+                ?>
+            </table>
+
+            
 
            
-           
+           <script src="productsInsertvalid.js"></script>
     </body>
 
     </html>

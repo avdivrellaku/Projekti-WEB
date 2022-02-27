@@ -31,7 +31,7 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login or Sign Up</title>
+    <title>Home</title>
     <style>
         .hide {
             display: none;
@@ -146,10 +146,9 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
                             <p class='price'>$$productSold[price]</p>
 
                         </div>
-                        <a href='#'><input class='buy-button' type='button' value='Buy Now'></a>
+                        <a href='#'><input class='buy-button' name='buy' type='button' value='Buy Now'></a>
                     </div>
-
-                    
+                
                     </div>
                     ";
                 }
@@ -177,6 +176,8 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
                         </div>
                         <a href='#'><input class='buy-button' type='button' value='Buy Now'></a>
                     </div>
+               
+
                     </div>
                     ";
                 }
@@ -185,6 +186,7 @@ $productsRecommend = $productRepository->getProductsByCategory('recommended');
 
 
             </div>
+           
        
         <hr>
         <div id="about">

@@ -185,10 +185,10 @@ ul li a:hover{
 }
 
     .tekst {
-        font-size: 25px;
+        font-size: 28px;
         margin: 30px 0px 20px 74px;
         font-weight: bold;
-        font-family:"Arial";
+        font-family:"calibri";
         text-decoration: underline;
         
         
@@ -277,15 +277,15 @@ ul li a:hover{
   
 
     .name{
-        font-size: 18px;
+        font-size: 20px;
         font-weight: bold;
-        font-family: Arial;
+        font-family: calibri;
         
     }
     .price {
         font-weight: bold;
         color: gray;
-        font-family: Arial;
+        font-family: calibri;
         margin-top: -6%;
     }
 
@@ -311,6 +311,7 @@ ul li a:hover{
         outline: none;
         cursor: pointer;
 		transition: .4s ease;
+        font-family: calibri;
        
     }
     .buy-button:hover{
@@ -790,18 +791,19 @@ ul li a:hover{
             .slides {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-around;
+                justify-content: space-between;
                 align-items:center;
-               
-                width: 80%;
-                height: 200px;
+                width: 85%;
+                height: 300px;
+                margin-left: 8%;
+                align-self: center;
                 
             }
             
-            #slides-pics {
+           #slides-pics {
                 width: 60%;
                 height: 80%;
-                left:15%;
+                left:25%;
          
             
               
@@ -809,22 +811,22 @@ ul li a:hover{
             }
 
             .products .tekst{
-                margin-left: 27%;
+                margin-left: 50% !important;
             }
             
+            
             #formsignup{
-                margin-left:20%;
                 height: 150%;
                 width: 40%;
                 flex-direction: space-between;
             }
 
             .slider-text{
-                margin-left: 30%;
-                font-size: 100%;
+                margin-left: 5%;
+                font-size: 30px;
             }
             #slider-text{
-                font-size:100%;
+                font-size:25px;
             }
 
             footer{
