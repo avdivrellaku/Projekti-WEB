@@ -1,7 +1,11 @@
 <?php 
 session_start();
 
+if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+    header("location:index.php");
+}
 
+else { 
 
 ?>
 
@@ -110,6 +114,7 @@ session_start();
             </form>
        
             <?php include_once 'registerController.php';
+}
             ?>
 
          
