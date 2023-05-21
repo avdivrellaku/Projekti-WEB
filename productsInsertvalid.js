@@ -1,7 +1,7 @@
 var nameRegex = /\w* *-*/;
 var typeRegex = /jerseys|shoes|other|tshirt/;
-var imgRegex = /\w* *-*/;
-var priceRegex = /\d+\.\d+/;
+var imgRegex = /^.*\.(jpg|png)/;
+var priceRegex = /^(?:10|[1-9]\d{1,7})(?:\.\d{1,2})?$/;
 
 
 
@@ -67,7 +67,7 @@ insertProduct.addEventListener("click", function (event) {
             imgMsg.innerText = "";
         }
         else {
-            imgMsg.innerText = "! Fill Image Name"
+            imgMsg.innerText = "! Image should be png or jpg type"
             event.preventDefault();
         }
     }
@@ -82,7 +82,7 @@ insertProduct.addEventListener("click", function (event) {
 
         }
         else {
-            priceMsg.innerText = "! Price must be a double number"
+            priceMsg.innerText = "! Price must be $10 or above "
             event.preventDefault();
         }
     }

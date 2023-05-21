@@ -1,8 +1,8 @@
 var nameRegex = /^[A-Z][a-z]{1,}/;
 var surnameRegex = /^[A-Z][a-z]{1,}/;
 var usernameRegex = /[a-z]+[.]+[a-z]+/;
-var emailRegex = /[a-z]\w+@[a-z]+[-]?[a-z]\.[a-z]{2,3}/;
-var passwordRegex = /^[A-Z][a-z]+\d{3,}[.|,]+/;
+var emailRegex = /[a-z]\w+@[a-z]+[-]?[a-z]\.[a-z]{2,4}/;
+var passwordRegex = /^[A-Z].{7,14}/;
 
 
 
@@ -100,7 +100,7 @@ registerButton.addEventListener("click", function (event) {
 
         }
         else {
-            passwordMsg.innerText = "! Password should start with a capital and end with 3+ numbers and . or ,"
+            passwordMsg.innerText = "! Password length should be 8-15 characters and start with a capital letter"
             event.preventDefault();
         }
     }
